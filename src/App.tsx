@@ -1,26 +1,29 @@
-import CountBtn from "@/components/count-btn";
-import ReactSVG from "@/assets/react.svg";
-import { Badge } from "@/components/ui/badge";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Header } from "./components/layout/header";
+import { Sidebar } from "./components/layout/sidebar";
+import { Footer } from "./components/layout/footer";
+import Home from "./app/page";
+import PopularMovies from "./app/movies/page";
+import MovieDetail from "./app/movie/[id]/page";
+
+import './app/globals.css';
 
 function App() {
   return (
-    <main className="flex flex-col items-center justify-center h-screen">
-      <div className="flex flex-col items-center gap-y-4">
-        <div className="inline-flex items-center gap-x-4">
-          <img src={ReactSVG} alt="React Logo" className="w-32" />
-          <span className="text-6xl">+</span>
-          <img src={"/vite.svg"} alt="Vite Logo" className="w-32" />
-        </div>
-        <a
-          href="https://ui.shadcn.com"
-          rel="noopener noreferrer nofollow"
-          target="_blank"
-        >
-          <Badge variant="outline">shadcn/ui</Badge>
-        </a>
-        <CountBtn />
+    <Router>
+      <div className="min-h-screen bg-[#1E1E2A]">
+        <Header />
+        <Sidebar />
+        <main className="pl-[72px] pt-16">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/movies" element={<PopularMovies />} />
+            <Route path="/movie/:id" element={<MovieDetail />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
-    </main>
+    </Router>
   );
 }
 
