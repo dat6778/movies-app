@@ -45,11 +45,19 @@ Follow these steps to get started with the react-vite-ui template:
    pnpm install
    ```
 
-4. Start the development server:
+4. Create a `.env` file in the root directory and add your TMDB API key:
+
+   ```bash
+   VITE_TMDB_API_KEY=your_api_key_here
+   ```
+
+5. Start the development server:
 
    ```bash
    pnpm dev
    ```
+
+6. Open [http://localhost:5173](http://localhost:5173) in your browser
 
 ## 📜 Available Scripts
 
@@ -84,3 +92,8 @@ react-vite-ui/
 ## 📄 License
 
 This project is licensed under the MIT License. See the [LICENSE](https://choosealicense.com/licenses/mit/) file for details.
+
+## License
+
+MIT License - feel free to use this project for learning or personal use.
+# movies-app
